@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Profile from "./Profile";
 import { AnimatePresence } from "framer-motion";
+import { NavLink } from "react-router-dom";
 function Header({ openSide, user }) {
   const [showProfile, setShowProfile] = useState(false);
   return (
@@ -42,7 +43,7 @@ function Header({ openSide, user }) {
               </svg>
             </button>
             <a
-              href="#"
+              href="/ens.um5"
               class="text-xl m-auto h-full font-bold flex items-center lg:ml-2.5"
             >
               <img
@@ -50,7 +51,6 @@ function Header({ openSide, user }) {
                 class=" h-auto my-1 w-44 mr-2 -ml-6 "
                 alt="Ecole Normale Supérieure"
               />
-              {/* <span class="self-center lg:block hidden whitespace-nowrap">Ecole Normale Supérieure</span> */}
             </a>
           </div>
         </div>
@@ -111,9 +111,9 @@ function Header({ openSide, user }) {
           type="button"
           class="relative py-1 ps-1 pe-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none  focus:outline-none"
         >
-          <span class="inline-block h-[2rem] w-[2rem]  rounded-lg overflow-hidden">
+          <span class="inline-block pointer-events-none h-[2rem] w-[2rem]  rounded-lg overflow-hidden">
             <svg
-              class="h-full rounded-lg w-full text-gray-300"
+              class="h-full pointer-events-none rounded-lg w-full text-gray-300"
               width="16"
               height="16"
               viewBox="0 0 16 16"
@@ -139,15 +139,15 @@ function Header({ openSide, user }) {
             </svg>
           </span>
 
-          <a
-            class="text--800 bg-gree text-sm max-w-[7.5rem] truncate w-16 "
+          <p
+            class="text--800 pointer-events-none bg-gree text-sm max-w-[7.5rem] truncate w-16 "
             name="openProfiel"
           >
             {user.name ? user.name : "...."}
-          </a>
+          </p>
           <svg
             onClick={() => setShowProfile((v) => !v)}
-            class="hs-dropdown-open:rotate-180 w-4 h-4"
+            class="hs-dropdown-open:rotate-180 pointer-events-none w-4 h-4"
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
